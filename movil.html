@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repair IT - Servicio Técnico Profesional</title>
+  <link rel="shortcut icon" href="Imagenes/Repair-IT-Logo.png" type="image/x-icon">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="estils_serveis_general.css">
+
+  <!-- Iconos Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="background-container">
+
+  <!-- HEADER CON MENÚ HAMBURGUESA IDÉNTICO AL INDEX -->
+  <header>  
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="index.html"></a>
+          <img src="Imagenes/Repair-IT-Logo.png" alt="Logo" width="64" height="64" class="rounded">
+          <span>REPAIR IT</span>
+        
+
+        <!-- Botón hamburguesa (solo en móvil) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-lg-4">
+            <li class="nav-item"><a class="nav-link" href="ordenadores.html">Computadoras</a></li>
+            <li class="nav-item"><a class="nav-link" href="consolas.html">Consolas</a></li>
+            <li class="nav-item"><a class="nav-link" href="movil.html">Móviles</a></li>
+            <li class="nav-item"><a class="nav-link" href="#footer">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO ESPECÍFICO DE MÓVILES -->
+  <main class="container py-4">
+
+    <div class="text-center mb-5">
+      <span class="btn-active mx-4">Reparaciones Moviles</span>
+    </div>
+
+<!-- Servicios Habituales: Móviles -->
+<div class="card-custom mb-4">
+  <div class="row align-items-center g-4">
+    <div class="col-md-3">
+      <div class="img-placeholder">
+        <img src="Imagenes/Reparacion-Android.jpg" alt="Reparación Android" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h2 class="section-title text-info">Reparación de Móviles Android</h2>
+      <p class="description text fw-bold">
+        Servicio técnico especializado en móviles Android: cambio de pantallas rotas, reparación de puertos de carga,
+        sustitución de baterías, solución de problemas de software y recuperación de datos. 
+      </p>
+      <p>Precio base: <span class="fw-bold text-success">45 €</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="card-custom mb-4">
+  <div class="row align-items-center g-4">
+    <div class="col-md-3">
+      <div class="img-placeholder">
+        <img src="Imagenes/Reparaciones-Iphone.jpg" alt="Reparación iPhone" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h2 class="section-title text-info">Reparación de iPhone</h2>
+      <p class="description text fw-bold">
+        Nos especializamos en la reparación de dispositivos iPhone: sustitución de pantallas originales, 
+        cambio de baterías, reparación de botones y conectores, solución de problemas de software y restauración del sistema. 
+      </p>
+      <p>Precio base: <span class="fw-bold text-success">85 €</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="card-custom mb-4">
+  <div class="row align-items-center g-4">
+    <div class="col-md-3">
+      <div class="img-placeholder">
+        <img src="Imagenes/Reparacion-Tablet.jpg" alt="Reparación Tablets" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h2 class="section-title text-info">Reparación de Tablets</h2>
+      <p class="description text fw-bold">
+        Servicio de reparación para tablets de todas las marcas: cambio de pantallas táctiles, 
+        sustitución de baterías, reparación de conectores de carga y optimización del rendimiento. 
+      </p>
+      <p>Precio base: <span class="fw-bold text-success">55 €</span></p>
+    </div>
+  </div>
+</div>
+
+    <!-- Formulario + Garantías (lado a lado) -->
+  <section class="row g-4 my-5" id="contacto">
+    <div class="col-lg-6">
+      <div class="form-card p-4 p-md-5 rounded-4 shadow-lg">
+        <h3 class="text-center mb-4 text-info fw-bold fs-2">Coméntanos tu Caso:</h3>
+        <form action="fitxer.php" method="post">
+          <input 
+            type="text" 
+            class="form-control mb-3" 
+            placeholder="¿Qué dispositivo es? (Ej: iPhone 15, PS5, MacBook...)" 
+            required
+          >
+          <select class="form-select mb-3" required>
+            <option value="" disabled selected>Seleccione el tipo de avería</option>
+            <option value="pantalla">Cambio de pantalla</option>
+            <option value="bateria">Reemplazo de batería</option>
+            <option value="puerto">Puerto de carga / conector</option>
+            <option value="placa">No enciende / placa base</option>
+            <option value="virus">Limpiar virus / formatear</option>
+            <option value="otros">Otros</option>
+          </select>
+          <textarea 
+            class="form-control mb-4" 
+            rows="4" 
+            placeholder="Describe el problema lo más detallado posible... (opcional pero ayuda mucho)"
+          ></textarea>
+        <!-- Checkbox de aceptación de política de privacidad -->
+          <div class="form-check mb-4">
+            <input 
+              class="form-check-input" 
+              type="checkbox" 
+              id="acepto" 
+              required
+            >
+          <label class="form-check-label" for="acepto">
+            He leído y acepto los <a href="terminos-condiciones.html" target="_blank">Términos y Condiciones</a>.
+            </label>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-send btn-lg px-5 py-3 fw-bold">
+              ENVIAR Y OBTENER PRESUPUESTO GRATIS
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+      <!-- Garantías -->
+      <div class="col-lg-6">
+        <div class="quote-card warranty p-5 rounded-4 shadow-lg h-100 d-flex flex-column justify-content-center">
+          <h3 class="text-center mb-4 text-info fw-bold fs-2">Nuestras Garantías</h3>
+          <ul class="list-unstyled warranty fs-5">
+            <li>Hasta 12 meses de garantía en todas las reparaciones</li>
+            <li>Piezas originales o de máxima calidad</li>
+            <li>Diagnóstico 100% gratuito y sin compromiso</li>
+            <li>Si no lo arreglamos, no cobramos</li>
+            <li>Trato personalizado y atención 24/7 por WhatsApp</li>
+            <li>Presupuesto en menos de 2 horas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h5>Ubicación</h5>
+        <p>Av. Corrientes 43100, 12</p>
+        <p>Tarragona, España</p>
+        <p>Lun-Sáb de 10 a 20 hs</p>
+      </div>
+      <div class="footer-column">
+        <h5>Síguenos</h5>
+        <div class="social-links">
+          <a href="https://instagram.com"><img src="Imagenes/Iconos/Instagram_icon.png" alt="Instagram" height="75"></a>
+          <a href="https://facebook.com"><img src="Imagenes/Iconos/Facebook.png" alt="Facebook" height="75"></a>
+          <a href="https://tiktok.com"><img src="Imagenes/Iconos/tiktok.png" alt="TikTok" height="75"></a>
+          <a href="https://youtube.com"><img src="Imagenes/Iconos/youtube.png" alt="YouTube" height="75"></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h5>Marcas con las que trabajamos</h5>
+        <div class="partner-logos">
+          <img src="Imagenes/amd-logo.png" alt="AMD">
+          <img src="Imagenes/intel.png" alt="Intel">
+          <img src="Imagenes/Nvidia.png" alt="NVIDIA">
+          <img src="Imagenes/Samsung.jpg" alt="Samsung">
+          <img src="Imagenes/oracle.png" alt="Oracle">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 REPAIR IT S.A. · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
