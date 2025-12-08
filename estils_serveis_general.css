@@ -127,13 +127,7 @@ nav a:hover, nav a.active {
 
 
 /* Títulos y botones */
-.page-title {
-  color: var(--text-red);
-  font-size: 1.7rem;
-  font-weight: bold;
-  text-align: center;
-  margin: 2rem 0 1.5rem;
-}
+
 
 .btn-active {
   display: inline-block;
