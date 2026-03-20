@@ -113,7 +113,51 @@
     </div>
   </nav>
  </header>
+
+
+<section class="carrusel-container">
+  <div class="carrusel-slider" id="carruselSlider">
+    <div class="carrusel-slide active">
+      <img src="Imagenes/carrusel-mobil.png" alt="Reparación de móviles">
+      <div class="carrusel-caption">
+        <h3>¿Pantalla Rota?</h3>
+        <p>Expertos en iPhone y Android. Reparación en el acto.</p>
+      </div>
+    </div>
+    <div class="carrusel-slide">
+      <img src="Imagenes/carrusel-pc.png" alt="Servicio técnico PC">
+      <div class="carrusel-caption">
+        <h3>Tu PC como el primer día</h3>
+        <p>Limpieza, optimización y cambio de componentes.</p>
+      </div>
+    </div>
+    <div class="carrusel-slide">
+      <img src="Imagenes/carrusel-consola.png" alt="Reparación de consolas">
+      <div class="carrusel-caption">
+        <h3>No dejes de jugar</h3>
+        <p>Reparamos tu PS5, Xbox o Switch con garantía.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flechas -->
+  <button class="carrusel-btn carrusel-btn-prev" id="carruselPrev" aria-label="Anterior">&#8249;</button>
+  <button class="carrusel-btn carrusel-btn-next" id="carruselNext" aria-label="Siguiente">&#8250;</button>
+
+  <!-- Puntos indicadores -->
+  <div class="carrusel-dots" id="carruselDots">
+    <div class="carrusel-dot active" data-index="0"></div>
+    <div class="carrusel-dot" data-index="1"></div>
+    <div class="carrusel-dot" data-index="2"></div>
+  </div>
+
+  <!-- Barra de progreso -->
+  <div class="carrusel-progress" id="carruselProgress"></div>
+</section>
+
+
   <main class="container py-5">
+
      
     <h1 class="text-center mb-5 text-info">Reparación de PC, Consolas y Móviles</h1>
 
@@ -150,6 +194,17 @@
       </div>
     </div>
 
+<section class="video-promo-section my-5 p-4 rounded-4 shadow-lg text-center">
+  <h2 class="text-info fw-bold mb-4">¿POR QUÉ ELEGIR REPAIR IT?</h2>
+  <div class="video-wrapper">
+    <video controls poster="Imagenes/poster-video.jpg" class="rounded-3 shadow">
+      <source src="media/video-promocional.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de vídeo.
+    </video>
+  </div>
+  <p class="mt-3 lead">Mira cómo trabajamos en nuestro laboratorio de precisión.</p>
+</section>
+    
 <!-- RESEÑAS -->
 <section class="my-5">
   <h2 class="text-center mb-5 text-info">LAS RESEÑAS DE NUESTROS CLIENTES</h2>
@@ -375,6 +430,101 @@
 
   <!-- Bootstrap JS (solo para el menú hamburguesa y componentes) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  (function () {
+    const slider = document.getElementById('carruselSlider');
+    const slides = slider.querySelectorAll('.carrusel-slide');
+    const dots = document.querySelectorAll('.carrusel-dot');
+    const progress = document.getElementById('carruselProgress');
+    const container = slider.closest('.carrusel-container');
+    const TOTAL = slides.length;
+    const INTERVAL = 4500;
+    const HEIGHT_DEFAULT = 480;
+    let current = 0;
+    let timer = null;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (index + TOTAL) % TOTAL;
+      slider.style.transform = `translateX(-${current * (100 / TOTAL)}%)`;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      progress.style.transition = 'none';
+      progress.style.width = '0%';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          progress.style.transition = `width ${INTERVAL}ms linear`;
+          progress.style.width = '100%';
+        });
+      });
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAuto() { timer = setInterval(next, INTERVAL); }
+    function resetAuto() { clearInterval(timer); startAuto(); }
+
+    // Flechas
+    document.getElementById('carruselPrev').addEventListener('click', () => { prev(); resetAuto(); });
+    document.getElementById('carruselNext').addEventListener('click', () => { next(); resetAuto(); });
+
+    // Dots
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goTo(parseInt(dot.dataset.index));
+        resetAuto();
+      });
+    });
+
+    // Hover: expande a la altura natural de la imagen activa
+    container.addEventListener('mouseenter', () => {
+      clearInterval(timer);
+      const activeImg = slides[current].querySelector('img');
+      // Crea una imagen temporal para obtener la altura natural
+      const tempImg = new Image();
+      tempImg.src = activeImg.src;
+      tempImg.onload = () => {
+        // Calcula la altura proporcional al ancho actual del contenedor
+        const containerWidth = container.offsetWidth;
+        const naturalRatio = tempImg.naturalHeight / tempImg.naturalWidth;
+        const targetHeight = Math.round(containerWidth * naturalRatio);
+        slider.style.height = targetHeight + 'px';
+        slides.forEach(s => {
+          s.querySelector('img').style.height = targetHeight + 'px';
+          s.querySelector('img').style.objectFit = 'contain';
+          s.querySelector('img').style.objectPosition = 'center center';
+        });
+      };
+      // Si la imagen ya estaba cargada, onload no se dispara — forzamos
+      if (tempImg.complete) tempImg.onload();
+    });
+
+    // Mouse leave: vuelve a la altura original
+    container.addEventListener('mouseleave', () => {
+      slider.style.height = HEIGHT_DEFAULT + 'px';
+      slides.forEach(s => {
+        s.querySelector('img').style.height = HEIGHT_DEFAULT + 'px';
+        s.querySelector('img').style.objectFit = 'cover';
+        s.querySelector('img').style.objectPosition = 'center 30%';
+      });
+      startAuto();
+    });
+
+    // Swipe táctil
+    let touchStartX = 0;
+    container.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    container.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+    });
+
+    goTo(0);
+    startAuto();
+  })();
+</script>
 
 </body>
 </html>

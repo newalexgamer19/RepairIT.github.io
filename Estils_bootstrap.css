@@ -1,122 +1,249 @@
-    :root {
-      --bs-primary: #0088cc;
-      --bs-primary-dark: #0077b6;
-      --bs-accent: #006699;
-      --bs-header: #003355;
-      --bs-light: #a0d8ef;
-      --bs-success: #00c853;
-      --bs-glow: #00ff80;
-    }
+:root {
+  --bs-primary: #0088cc;
+  --bs-primary-dark: #0077b6;
+  --bs-accent: #006699;
+  --bs-header: #003355;
+  --bs-light: #a0d8ef;
+  --bs-success: #00c853;
+  --bs-glow: #00ff80;
+}
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: 
-        radial-gradient(circle at 25% 25%, #1b2838 2%, transparent 3%),
-        radial-gradient(circle at 75% 75%, #1b2838 2%, transparent 3%),
-        radial-gradient(circle at 25% 75%, #1b2838 2%, transparent 3%),
-        radial-gradient(circle at 75% 25%, #1b2838 2%, transparent 3%),
-        linear-gradient(145deg, #2a475e 0%, #1b2838 50%, #000000 100%);
-      background-attachment: fixed;
-      background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px, cover;
-      color: white;
-      min-height: 100vh;
-    }
-    
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: 
+    radial-gradient(circle at 25% 25%, #1b2838 2%, transparent 3%),
+    radial-gradient(circle at 75% 75%, #1b2838 2%, transparent 3%),
+    radial-gradient(circle at 25% 75%, #1b2838 2%, transparent 3%),
+    radial-gradient(circle at 75% 25%, #1b2838 2%, transparent 3%),
+    linear-gradient(145deg, #2a475e 0%, #1b2838 50%, #000000 100%);
+  background-attachment: fixed;
+  background-size: 80px 80px, 80px 80px, 80px 80px, 80px 80px, cover;
+  color: white;
+  min-height: 100vh;
+}
 
-    /* Header personalizado */
-    .navbar {
-      background: var(--bs-header) !important;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    }
+/* Header */
+.navbar {
+  background: var(--bs-header) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
 
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.9rem;
-      color: white !important;
-    }
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: white !important;
+}
 
-    .nav-item{
-      gap: 2.5rem;
-      margin: 0;
-      padding: 0;
-    }
+.nav-item {
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
 
-    .nav-link {
-      color: white !important;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
 
-    .nav-link:hover {
-      color: #00ccff !important;
-    }
+.nav-link:hover {
+  color: #00ccff !important;
+}
 
-    /* Head */
-    .head {
-      background: #006699;
-      height: 280px;
-      display: grid;
-      place-items: center;
-      font-size: 3rem;
-      font-weight: 700;
-      text-align: center;
-    }
+/* Head */
+.head {
+  background: #006699;
+  height: 280px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
 
-    /* Servicios */
-    .service-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      height: 400px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      transition: transform 0.4s ease;
-    }
+/* --- CARRUSEL --- */
+.carrusel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  display: block;
+}
 
-    .service-card:hover {
-      transform: translateY(-15px);
-    }
+.carrusel-slider {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  width: 300% !important;
+  height: 480px;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), height 0.5s ease;
+}
 
-    .service-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
+.carrusel-slide {
+  width: calc(100% / 3) !important;
+  flex-shrink: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
 
-    .service-card:hover img {
-      transform: scale(1.12);
-    }
+.carrusel-slide img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  opacity: 0.75;
+  transition: opacity 0.8s ease, height 0.5s ease, object-fit 0s;
+}
 
-    .service-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
+.carrusel-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
 
-    .service-card:hover .service-overlay {
-      transform: translateY(0);
-    }
+.carrusel-slide.active .carrusel-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    /* Reseñas */
-    .review {
-      background: rgba(255,255,255,0.12);
-      border-left: 5px solid #00ccff;
-      transition: transform 0.3s;
-    }
+.carrusel-caption h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00ccff;
+  margin-bottom: 0.5rem;
+}
 
-    .review:hover {
-      transform: translateY(-8px);
-    }
+.carrusel-caption p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 420px;
+}
 
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 204, 255, 0.5);
+  color: #00ccff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+  line-height: 1;
+}
 
-  /*Sobre Nosotros*/
+.carrusel-btn:hover {
+  background: rgba(0, 204, 255, 0.25);
+  border-color: #00ccff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-btn-prev { left: 1.5rem; }
+.carrusel-btn-next { right: 1.5rem; }
+
+.carrusel-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.carrusel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(0, 204, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carrusel-dot.active {
+  background: #00ccff;
+  transform: scale(1.3);
+}
+
+.carrusel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00ccff, #00ff9d);
+  z-index: 20;
+  width: 0%;
+  transition: width 0s linear;
+}
+
+/* Servicios */
+.service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-15px);
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.12);
+}
+
+.service-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-overlay {
+  transform: translateY(0);
+}
+
+/* Reseñas */
+.review {
+  background: rgba(255,255,255,0.12);
+  border-left: 5px solid #00ccff;
+  transition: transform 0.3s;
+}
+
+.review:hover {
+  transform: translateY(-8px);
+}
+
+/* Sobre Nosotros */
 .about-card {
   background: linear-gradient(135deg, #0d5b8a, #0a3d62);
   border: 1px solid rgba(0, 204, 255, 0.4);
@@ -149,7 +276,6 @@
   color: #e0f7ff;
 }
 
-
 .social-links {
   display: flex;
   justify-content: center;
@@ -167,23 +293,7 @@
   transform: scale(1.15);
 }
 
-
-
-/* Responsive: en móvil el logo arriba y texto debajo */
-@media (max-width: 991px) {
-  .about-card .row {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .about-logo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px;
-  }
-}
-
-    /* Formulario  */
+/* Formulario */
 .form-card {
   background: linear-gradient(135deg, #0d3b66, #0a2e52);
   border-radius: 20px;
@@ -248,7 +358,7 @@
   color: #000;
 }
 
-/*Garantias*/
+/* Garantías */
 .warranty {
   background: rgba(13, 59, 102, 0.9);
   backdrop-filter: blur(10px);
@@ -261,48 +371,48 @@
   font-size: 1.15rem;
   line-height: 1.6;
 }
+
 .warranty ul li::before {
-      content: "🟢";
-      color: #00ff80;
-      position: absolute;
-      border: 2px #00ff80 ;
-      left: 0;
-      font-weight: bold;
-    }
+  content: "🟢";
+  color: #00ff80;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
 
-  .warranty:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 255, 157, 0.4);
-  }
+.warranty:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 255, 157, 0.4);
+}
 
-    /* Footer */
-    .text-info{
-    text-align: center;
-    }
+/* Footer */
+.text-info {
+  text-align: center;
+}
 
+footer {
+  background: #001f33;
+  color: #ccc;
+}
 
-    footer {
-      background: #001f33;
-      color: #ccc;
-    }
+.partner-logos img {
+  height: 48px;
+  filter: grayscale(80%) brightness(0) invert(0.9);
+  opacity: 0.8;
+  transition: all 0.3s;
+}
 
-    .partner-logos img {
-      height: 48px;
-      filter: grayscale(80%) brightness(0) invert(0.9);
-      opacity: 0.8;
-      transition: all 0.3s;
-    }
+.partner-logos img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.2);
+}
 
-    .partner-logos img:hover {
-      filter: none;
-      opacity: 1;
-      transform: scale(1.2);
-    }
-
-/* Añade esto al final de tu Estils_bootstrap.css (o reemplaza las partes antiguas media queries) */
+/* =====================
+   MEDIA QUERIES
+   ===================== */
 
 @media (max-width: 992px) {
-  /* Sobre Nosotros - móvil */
   .about-card {
     padding: 2rem !important;
   }
@@ -315,10 +425,13 @@
     font-size: 1.05rem !important;
     text-align: center;
   }
+  .about-card .row {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Header Bootstrap */
   .navbar-brand {
     font-size: 1.6rem !important;
   }
@@ -326,33 +439,30 @@
     width: 50px !important;
     height: 50px !important;
   }
-
-  /* Servicios */
   .service-card {
     height: 320px !important;
   }
-
-  /* Reseñas */
   .review {
     margin-bottom: 1.5rem;
   }
-
-  /* Formulario y garantías */
   .form-card,
   .warranty {
     padding: 2rem !important;
     margin-bottom: 2rem;
   }
-
   .btn-send {
     padding: 16px 30px !important;
     font-size: 1.1rem !important;
   }
-
-  /* Títulos */
   h1, h2, h3 {
     font-size: 1.8rem !important;
   }
+  .carrusel-slider { height: 260px; }
+  .carrusel-slide img { height: 260px; }
+  .carrusel-caption h3 { font-size: 1.8rem; }
+  .carrusel-caption p { font-size: 0.95rem; }
+  .carrusel-caption { bottom: 10%; left: 5%; }
+  .carrusel-btn { width: 38px; height: 38px; font-size: 1.1rem; }
 }
 
 @media (max-width: 576px) {
@@ -360,37 +470,35 @@
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
-
   .service-card {
     height: 280px !important;
   }
-
   .service-overlay {
     padding: 1.5rem !important;
   }
-
   .form-card,
   .warranty {
     padding: 1.5rem !important;
   }
-
   .about-card {
     padding: 1.5rem !important;
   }
-
   .about-logo {
     width: 120px !important;
     height: 120px !important;
   }
-
   .btn-send {
     width: 100%;
     padding: 18px !important;
   }
-
-  /* Footer */
   .partner-logos img {
     height: 40px;
   }
 }
- 
+
+@media (max-width: 480px) {
+  .carrusel-caption h3 { font-size: 1.3rem; }
+  .carrusel-caption p { display: none; }
+  .carrusel-btn-prev { left: 0.5rem; }
+  .carrusel-btn-next { right: 0.5rem; }
+}
