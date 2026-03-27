@@ -83,7 +83,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid px-4 px-lg-5">
@@ -106,7 +105,6 @@
     </nav>
   </header>
 
-  <!-- CARRUSEL -->
   <section class="carrusel-container">
     <div class="carrusel-slider" id="carruselSlider">
       <div class="carrusel-slide active">
@@ -131,8 +129,8 @@
         </div>
       </div>
     </div>
-    <button class="carrusel-btn carrusel-btn-prev" id="carruselPrev" aria-label="Anterior">&#8249;</button>
-    <button class="carrusel-btn carrusel-btn-next" id="carruselNext" aria-label="Siguiente">&#8250;</button>
+    <button class="carrusel-btn carrusel-btn-prev" id="carruselPrev" aria-label="Anterior">‹</button>
+    <button class="carrusel-btn carrusel-btn-next" id="carruselNext" aria-label="Siguiente">›</button>
     <div class="carrusel-dots" id="carruselDots">
       <div class="carrusel-dot active" data-index="0"></div>
       <div class="carrusel-dot" data-index="1"></div>
@@ -145,7 +143,6 @@
 
     <h1 class="text-center mb-5 text-info">Reparación de PC, Consolas y Móviles</h1>
 
-    <!-- SERVICIOS -->
     <div class="row g-4 mb-5">
       <div class="col-md-4">
         <article class="service-card">
@@ -176,7 +173,6 @@
       </div>
     </div>
 
-    <!-- VIDEO -->
     <section class="video-promo-section my-5 p-4 rounded-4 shadow-lg text-center">
       <h2 class="text-info fw-bold mb-4">¿POR QUÉ ELEGIR REPAIR IT?</h2>
       <div class="video-wrapper">
@@ -188,7 +184,6 @@
       <p class="mt-3 lead">Mira cómo trabajamos en nuestro laboratorio de precisión.</p>
     </section>
 
-    <!-- RESEÑAS -->
     <section class="my-5">
       <h2 class="text-center mb-5 text-info">LAS RESEÑAS DE NUESTROS CLIENTES</h2>
       <div class="row g-4">
@@ -247,19 +242,29 @@
       </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
     <section class="my-5">
       <h2 class="text-center mb-5 text-info fw-bold fs-1">SOBRE NOSOTROS</h2>
 
-      <!-- Tarjeta principal -->
       <div class="about-card mx-auto p-4 p-lg-5 rounded-4 shadow-lg">
         <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-lg-3 text-center">
+          <div class="col-lg-4 text-center">
             <div class="about-logo bg-light rounded-3 d-inline-block p-4 shadow">
               <img src="Imagenes/Repair-IT-Logo.png" alt="Repair IT Logo" width="140" class="img-fluid">
             </div>
+            <div class="mt-3 rounded-3 overflow-hidden shadow-sm" style="border: 1px solid rgba(0,204,255,0.3);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.123456789!2d1.2444!3d41.1189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a151f2c5a0b0b5%3A0x1234567890abcdef!2sTarragona%2C+Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1234567890"
+                width="100%"
+                height="220"
+                style="border: none; display: block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación Repair IT">
+              </iframe>
+            </div>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-8">
             <div class="about-text">
               <p class="lead fs-5 mb-4">
                 En <strong>Repair It</strong> somos líderes en el sector de la reparación de dispositivos electrónicos,
@@ -284,7 +289,6 @@
         </div>
       </div>
 
-      <!-- Infografía Canva -->
       <div class="about-card mx-auto mt-4 p-4 p-lg-5 rounded-4 shadow-lg">
         <h3 class="text-center mb-4 text-info fw-bold fs-2">Nuestro Proceso de Reparación</h3>
         <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%; padding-bottom: 0; overflow: hidden; border-radius: 12px; will-change: transform;">
@@ -304,7 +308,6 @@
 
     </section>
 
-    <!-- FORMULARIO + GARANTÍAS -->
     <section class="row g-4 my-5" id="contacto">
       <div class="col-lg-6">
         <div class="form-card p-4 p-md-5 rounded-4 shadow-lg">
@@ -352,14 +355,15 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="py-5" id="footer">
     <div class="container">
       <div class="row text-center text-md-start g-5">
+
         <div class="col-md-4">
           <h5 class="text-info">Ubicación</h5>
           <p>Av. Corrientes 43100, 12<br>Tarragona, España<br>Lun-Sáb de 10 a 20 hs</p>
         </div>
+
         <div class="col-md-4">
           <h5 class="text-info">Síguenos</h5>
           <div class="social-links">
@@ -369,6 +373,7 @@
             <a href="https://youtube.com"><img src="Imagenes/Iconos/youtube.png" alt="YouTube" height="75"></a>
           </div>
         </div>
+
         <div class="col-md-4">
           <h5 class="text-info">Marcas con las que trabajamos</h5>
           <div class="partner-logos d-flex flex-wrap justify-content-center gap-4 mt-3">
@@ -379,9 +384,10 @@
             <img src="Imagenes/oracle.png" alt="Oracle">
           </div>
         </div>
+
       </div>
       <hr class="my-4 border-secondary">
-      <p style="text-align: center;">© 2025 REPAIR IT S.A. · Todos los derechos reservados</p>
+      <p style="text-align: center;">© 2026 REPAIR IT S.A. · Todos los derechos reservados</p>
     </div>
   </footer>
 
