@@ -7,6 +7,11 @@
   <link rel="shortcut icon" href="Imagenes/Repair-IT-Logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Preconnect para acelerar carga de recursos externos -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://www.google.com">
+  <link rel="preconnect" href="https://www.canva.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="Estils_bootstrap.css">
   <meta name="description" content="Repair IT - Servicio técnico profesional de reparación de computadoras, consolas y móviles. Más de 15 años de experiencia y más de 10.000 reparaciones realizadas. Presupuesto gratis en menos de 2 horas.">
   <meta name="keywords" content="reparación PC, reparación consolas, reparación móviles, servicio técnico, reparar ordenador, reparar PlayStation, reparar Xbox, reparar Nintendo, reparar iPhone, reparar Android">
@@ -110,21 +115,21 @@
   <section class="carrusel-container">
     <div class="carrusel-slider" id="carruselSlider">
       <div class="carrusel-slide active">
-        <img src="Imagenes/carrusel-mobil.png" alt="Reparación de móviles">
+        <img src="Imagenes/carrusel-mobil.png" alt="Reparación de móviles" width="1400" height="788" fetchpriority="high">
         <div class="carrusel-caption">
           <h3>¿Pantalla Rota?</h3>
           <p>Expertos en iPhone y Android. Reparación en el acto.</p>
         </div>
       </div>
       <div class="carrusel-slide">
-        <img src="Imagenes/carrusel-pc.png" alt="Servicio técnico PC">
+        <img src="Imagenes/carrusel-pc.png" alt="Servicio técnico PC" width="1400" height="788">
         <div class="carrusel-caption">
           <h3>Tu PC como el primer día</h3>
           <p>Limpieza, optimización y cambio de componentes.</p>
         </div>
       </div>
       <div class="carrusel-slide">
-        <img src="Imagenes/carrusel-consola.png" alt="Reparación de consolas">
+        <img src="Imagenes/carrusel-consola.png" alt="Reparación de consolas" width="1400" height="788">
         <div class="carrusel-caption">
           <h3>No dejes de jugar</h3>
           <p>Reparamos tu PS5, Xbox o Switch con garantía.</p>
@@ -149,7 +154,7 @@
     <div class="row g-4 mb-5">
       <div class="col-md-4">
         <article class="service-card">
-          <a href="ordenadores.html"><img src="Imagenes/Reparacion-PC.jpg" alt="PC"></a>
+          <a href="ordenadores.html"><img src="Imagenes/Reparacion-PC.jpg" alt="PC" loading="lazy"></a>
           <div class="service-overlay">
             <h3>Reparaciones PC</h3>
             <p>Computadoras de escritorio, laptops, todo en uno y más.</p>
@@ -158,7 +163,7 @@
       </div>
       <div class="col-md-4">
         <article class="service-card">
-          <a href="consolas.html"><img src="Imagenes/Reparacion-Consolas.jpg" alt="Consolas"></a>
+          <a href="consolas.html"><img src="Imagenes/Reparacion-Consolas.jpg" alt="Consolas" loading="lazy"></a>
           <div class="service-overlay">
             <h3>Reparaciones Consolas</h3>
             <p>PlayStation, Xbox, Nintendo Switch… cualquier fallo.</p>
@@ -167,7 +172,7 @@
       </div>
       <div class="col-md-4">
         <article class="service-card">
-          <a href="movil.html"><img src="Imagenes/Reparaciones-Movil.jpg" alt="Móviles"></a>
+          <a href="movil.html"><img src="Imagenes/Reparaciones-Movil.jpg" alt="Móviles" loading="lazy"></a>
           <div class="service-overlay">
             <h3>Reparaciones Móviles</h3>
             <p>Pantallas rotas, baterías, cámaras, puertos… iPhone y Android.</p>
@@ -195,53 +200,53 @@
         <div class="col-md-6">
           <div class="review p-4 rounded">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="Imagenes/foto_perfil_usuario_1.jpg" class="rounded-circle border border-info border-3" width="60" height="60" alt="Reseña 1">
+              <img src="Imagenes/foto_perfil_usuario_1.jpg" class="rounded-circle border border-info border-3" width="60" height="60" loading="lazy" alt="Reseña 1">
               <div>
                 <h3 class="h5 text-info mb-0">Luis Gonzalez</h3>
                 <p class="text-success mb-0">5 estrellas <small class="text-light">hace 2 meses</small></p>
               </div>
             </div>
             <p>Me arreglaron el portatil despues de que mi hijo rompiera la pantalla jugando a roblox, de paso me recomendaron cambiar bateria y pasta termica por el desgaste que tenia.</p>
-            <img src="Imagenes/foto_review1.jpg" class="img-fluid rounded mt-3" style="max-width:300px;" alt="reparación">
+            <img src="Imagenes/foto_review1.jpg" class="img-fluid rounded mt-3" style="max-width:300px;" loading="lazy" alt="reparación">
           </div>
         </div>
         <div class="col-md-6">
           <div class="review p-4 rounded">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="Imagenes/foto_perfil_usuario_2.jpg" class="rounded-circle border border-info border-3" width="60" height="60" alt="Reseña 2">
+              <img src="Imagenes/foto_perfil_usuario_2.jpg" class="rounded-circle border border-info border-3" width="60" height="60" loading="lazy" alt="Reseña 2">
               <div>
                 <h3 class="h5 text-info mb-0">Mario Bros</h3>
                 <p class="text-success mb-0">5 estrellas <small class="text-light">hace 2 meses</small></p>
               </div>
             </div>
             <p>Mi PS5 sufria de problemas de refrigeracion a causa de que el metal liquido se habia corroido, afortunadamente los tecnicos lograron repararla a tiempo, muy buenos y rapidos</p>
-            <img src="Imagenes/foto_review2.jpg" class="img-fluid rounded mt-3" style="max-width:300px;" alt="reparación">
+            <img src="Imagenes/foto_review2.jpg" class="img-fluid rounded mt-3" style="max-width:300px;" loading="lazy" alt="reparación">
           </div>
         </div>
         <div class="col-md-6">
           <div class="review p-4 rounded">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="Imagenes/foto_perfil_usuario_3.jpg" class="rounded-circle border border-info border-3" width="60" height="60" alt="Reseña 3">
+              <img src="Imagenes/foto_perfil_usuario_3.jpg" class="rounded-circle border border-info border-3" width="60" height="60" loading="lazy" alt="Reseña 3">
               <div>
                 <h3 class="h5 text-info mb-0">Adolfo Garcia</h3>
                 <p class="text-success mb-0">5 estrellas <small class="text-light">hace 2 meses</small></p>
               </div>
             </div>
             <p>Me arreglaron la Nintendo 3DS muy bien y rápido, sobretodo Luis del servicio técnico muy amable el hombre</p>
-            <img src="Imagenes/foto_review3.jpg" class="img-fluid rounded mt-3" style="max-width:300px;" alt="reparación">
+            <img src="Imagenes/foto_review3.jpg" class="img-fluid rounded mt-3" style="max-width:300px;" loading="lazy" alt="reparación">
           </div>
         </div>
         <div class="col-md-6">
           <div class="review p-4 rounded">
             <div class="d-flex align-items-center gap-3 mb-3">
-              <img src="Imagenes/foto_perfil_usuario_4.jpg" class="rounded-circle border border-info border-3" width="60" height="60" alt="Reseña 4">
+              <img src="Imagenes/foto_perfil_usuario_4.jpg" class="rounded-circle border border-info border-3" width="60" height="60" loading="lazy" alt="Reseña 4">
               <div>
                 <h3 class="h5 text-info mb-0">Romeo</h3>
                 <p class="text-success mb-0">5 estrellas <small class="text-light">hace 2 meses</small></p>
               </div>
             </div>
             <p>Mi Ipad me estaba dando problemas con los puertos de carga, tras 3 servicios tecnicos, di con RepairIT por recomendacion de un amigo, gracias a dios di con ellos lo arreglaron enseguida</p>
-            <img src="Imagenes/foto_review4.jpg" class="img-fluid rounded mt-3" style="max-width:300px; height: 275px;" alt="reparación">
+            <img src="Imagenes/foto_review4.jpg" class="img-fluid rounded mt-3" style="max-width:300px; height: 275px;" loading="lazy" alt="reparación">
           </div>
         </div>
       </div>
@@ -256,7 +261,7 @@
         <div class="row align-items-center g-4 g-lg-5">
           <div class="col-lg-3 text-center">
             <div class="about-logo bg-light rounded-3 d-inline-block p-4 shadow">
-              <img src="Imagenes/Repair-IT-Logo.png" alt="Repair IT Logo" width="140" class="img-fluid">
+              <img src="Imagenes/Repair-IT-Logo.png" alt="Repair IT Logo" width="140" class="img-fluid" loading="lazy">
             </div>
           </div>
           <div class="col-lg-9">
@@ -385,10 +390,10 @@
         <div class="col-md-4">
           <h5 class="text-info">Síguenos</h5>
           <div class="social-links">
-            <a href="https://instagram.com"><img src="Imagenes/Iconos/Instagram_icon.png" alt="Instagram" height="75"></a>
-            <a href="https://facebook.com"><img src="Imagenes/Iconos/Facebook.png" alt="Facebook" height="75"></a>
-            <a href="https://tiktok.com"><img src="Imagenes/Iconos/tiktok.png" alt="TikTok" height="75"></a>
-            <a href="https://youtube.com"><img src="Imagenes/Iconos/youtube.png" alt="YouTube" height="75"></a>
+            <a href="https://instagram.com"><img src="Imagenes/Iconos/Instagram_icon.png" alt="Instagram" height="75" loading="lazy"></a>
+            <a href="https://facebook.com"><img src="Imagenes/Iconos/Facebook.png" alt="Facebook" height="75" loading="lazy"></a>
+            <a href="https://tiktok.com"><img src="Imagenes/Iconos/tiktok.png" alt="TikTok" height="75" loading="lazy"></a>
+            <a href="https://youtube.com"><img src="Imagenes/Iconos/youtube.png" alt="YouTube" height="75" loading="lazy"></a>
           </div>
         </div>
 
@@ -396,11 +401,11 @@
         <div class="col-md-4">
           <h5 class="text-info">Marcas con las que trabajamos</h5>
           <div class="partner-logos d-flex flex-wrap justify-content-center gap-4 mt-3">
-            <img src="Imagenes/amd-logo.png" alt="AMD">
-            <img src="Imagenes/intel.png" alt="Intel">
-            <img src="Imagenes/Nvidia.png" alt="NVIDIA">
-            <img src="Imagenes/Samsung.jpg" alt="Samsung">
-            <img src="Imagenes/oracle.png" alt="Oracle">
+            <img src="Imagenes/amd-logo.png" alt="AMD" loading="lazy">
+            <img src="Imagenes/intel.png" alt="Intel" loading="lazy">
+            <img src="Imagenes/Nvidia.png" alt="NVIDIA" loading="lazy">
+            <img src="Imagenes/Samsung.jpg" alt="Samsung" loading="lazy">
+            <img src="Imagenes/oracle.png" alt="Oracle" loading="lazy">
           </div>
         </div>
 
@@ -410,7 +415,7 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
   <script>
     (function () {
